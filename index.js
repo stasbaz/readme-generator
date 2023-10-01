@@ -1,8 +1,6 @@
-// TODO: Include packages needed for this application
 import inquirer from 'inquirer';
 import fs from 'fs';
 
-// TODO: Create an array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -41,7 +39,6 @@ const questions = [
     },
 ];
 
-// TODO: Create a function to write the README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) {
@@ -52,7 +49,6 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize the app
 function init() {
     inquirer.prompt(questions).then((answers) => {
         // Generate the README content
@@ -94,7 +90,6 @@ ${answers.tests}
 ## Questions
 If you have any questions, please reach out to [bazuluk989@gmail.com](mailto:bazuluk989@gmail.com).
         `;
-        // Write the README content to a file
         writeToFile('README.md', readmeContent);
     });
 }
